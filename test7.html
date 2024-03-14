@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7</title>
+  <style>
+    .slider {
+      position: relative;
+      width: 70%;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      text-align: center;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .caption {
+      background-color: #000;
+      color: #fff;
+      padding: 10px;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      opacity: 0.7;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="slider">
+    <div class="slide active">
+      <img src="cat.jpg" alt="写真1">
+      <div class="caption">猫</div>
+    </div>
+
+    <div class="slide">
+      <img src="dog.jpg" alt="写真2">
+      <div class="caption">犬</div>
+    </div>
+
+    <div class="slide">
+      <img src="penguin.jpg" alt="写真3">
+      <div class="caption">ペンギン</div>
+    </div>
+
+
+    <script>
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".slide");
+      const totalSlides = slides.length;
+      setInterval(nextSlide, 3000);
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+
+        function showSlide(index) {
+          slides.forEach((slide) => {
+            slide.style.display = "none";
+          });
+          slides[index].style.display = "block";
+        }
+
+      }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>サイドメニューバーとコンテンツ</title>
+  <style>
+    body {
+      display: flex;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .sidebar {
+      background: #ddd;
+      width: 200px;
+      height: 100vh;
+      padding: 20px 0;
+      box-sizing: border-box;
+    }
+
+    .menu-link {
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .menu-link:hover,
+    .active {
+      background-color: #bbb;
+    }
+
+    .content-area {
+      width: 100vw;
+      padding: 20px;
+      background-color: #f4f4f4;
+      height: 100vh;
+    }
+
+    .content {
+      display: none;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <a href="#" class="menu-link active" data-target="content1">メニュー1</a>
+    <a href="#" class="menu-link" data-target="content2">メニュー2</a>
+    <a href="#" class="menu-link" data-target="content3">メニュー3</a>
+    <a href="#" class="menu-link" data-target="content4">メニュー4</a>
+    <a href="#" class="menu-link" data-target="content5">メニュー5</a>
+  </div>
+
+  <div class="content-area">
+    <div id="content1" class="content" style="display: block;">
+      <h3>コンテンツ1</h3>
+      <p>コンテンツ1の内容がここに表示されます。</p>
+    </div>
+    <div id="content2" class="content">
+      <h3>コンテンツ2</h3>
+      <p>コンテンツ2の内容がここに表示されます。</p>
+    </div>
+    <div id="content3" class="content">
+      <h3>コンテンツ3</h3>
+      <p>コンテンツ3の内容がここに表示されます。</p>
+    </div>
+    <div id="content4" class="content">
+      <h3>コンテンツ4</h3>
+      <p>コンテンツ4の内容がここに表示されます。</p>
+    </div>
+    <div id="content5" class="content">
+      <h3>コンテンツ5</h3>
+      <p>コンテンツ5の内容がここに表示されます。</p>
+    </div>
+  </div>
+
+  <script>
+    const links = document.querySelectorAll(".menu-link");
+    const contents = document.querySelectorAll(".content");
+    links.forEach(link => link.addEventListener('click', changeContent));
+
+    function changeContent() {
+      contents.forEach(content => content.style.display = "none");
+      links.forEach(link => link.classList.remove("active"));
+
+      const targetId = this.getAttribute("data-target");
+      document.getElementById(targetId).style.display = "block";
+      this.classList.add("active");
+    }
+  </script>
+
+</body>
+
+</html>

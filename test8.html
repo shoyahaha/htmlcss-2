@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>タブメニュー</title>
+  <style>
+    /* タブのスタイル */
+    .tab-links {
+      background: #ddd;
+    }
+
+    .tab-link {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px 15px;
+    }
+
+    .tab-link:hover,
+    .active {
+      background-color: #bbb;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="tab-links">
+    <button class="tab-link active" data-target="tab1">タブ1</button>
+    <button class="tab-link" data-target="tab2">タブ2</button>
+    <button class="tab-link" data-target="tab3">タブ3</button>
+  </div>
+
+  <div id="tab1" class="tab-content">
+    <h3>野球</h3>
+    <p>野球の内容がここに表示されます。</p>
+  </div>
+  <div id="tab2" class="tab-content">
+    <h3>サッカー</h3>
+    <p>サッカーの内容がここに表示されます。</p>
+  </div>
+  <div id="tab3" class="tab-content">
+    <h3>ボクシング</h3>
+    <p>ボクシングの内容がここに表示されます。</p>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll(".tab-link");
+    const contents = document.querySelectorAll(".tab-content");
+
+    function changeTab() {
+      contents.forEach(content => content.style.display = "none");
+      buttons.forEach(button => button.classList.remove("active"));
+
+      const targetId = this.getAttribute("data-target");
+      document.getElementById(targetId).style.display = "block";
+
+      this.classList.add("active");
+    };
+
+    buttons.forEach(button => button.addEventListener("click", changeTab));
+    buttons[0].click();
+  </script>
+
+</body>
+
+</html>

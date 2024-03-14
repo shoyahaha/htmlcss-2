@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ドロップダウンメニュー</title>
+  <style>
+    .dropdown {
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      padding: 12px 16px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      padding: 12px 16px;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="dropdown">
+    メニュー1
+    <div class="dropdown-content">
+      <a href="#">サブメニュー1-1</a>
+      <a href="#">サブメニュー1-2</a>
+      <a href="#">サブメニュー1-3</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    メニュー2
+    <div class="dropdown-content">
+      <a href="#">サブメニュー2-1</a>
+      <a href="#">サブメニュー2-2</a>
+      <a href="#">サブメニュー2-3</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    メニュー3
+    <div class="dropdown-content">
+      <a href="#">サブメニュー3-1</a>
+      <a href="#">サブメニュー3-2</a>
+      <a href="#">サブメニュー3-3</a>
+    </div>
+  </div>
+
+</body>
+
+</html>

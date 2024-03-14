@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>アコーディオンメニュー</title>
+  <style>
+    .accordion {
+      margin-bottom: 10px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+
+    .panel {
+      max-height: 0;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>アコーディオンメニュー</h2>
+
+  <button class="accordion">セクション 1</button>
+  <div class="panel">
+    <p>12345</p>
+  </div>
+
+  <button class="accordion">セクション 2</button>
+  <div class="panel">
+    <p>678910</p>
+  </div>
+
+  <button class="accordion">セクション 3</button>
+  <div class="panel">
+    <p>1112131415</p>
+  </div>
+
+  <script>
+    var accs = document.querySelectorAll(".accordion");
+    var i;
+
+    accs.forEach(acc => {
+      acc.addEventListener("click", function () {
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ホバーエフェクト付きボタン</title>
+  <style>
+    button {
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .hover-effect-1 {
+      background-color: #007bff;
+    }
+
+    .hover-effect-1:hover {
+      background-color: #0056b3;
+    }
+
+    .hover-effect-2 {
+      border-color: #007bff;
+    }
+
+    .hover-effect-2:hover {
+      box-shadow: 0 0 8px 0 #007bff;
+      border-color: #0056b3;
+    }
+
+    .hover-effect-3 {
+      background-color: #28a745;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .hover-effect-3:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    }
+  </style>
+</head>
+
+<body>
+
+  <button class="hover-effect-1">背景色変更</button>
+  <button class="hover-effect-2">境界線拡大</button>
+  <button class="hover-effect-3">影の拡散</button>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ブログカード</title>
+  <style>
+    .blog-card {
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .blog-card:hover {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .blog-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .blog-card-description {
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="blog-card">
+    <img src="blog.jpg" alt="ブログの画像">
+    <h3 class="blog-card-title">ブログのタイトル</h3>
+    <p class="blog-card-description">ここにブログの概要を書きます。このテキストは、ブログ記事の短い紹介文として機能します。</p>
+  </div>
+
+</body>
+
+</html>

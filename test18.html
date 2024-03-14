@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>カレンダーUI</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+
+    .calendar {
+      width: 300px;
+      border: 1px solid #ccc;
+    }
+
+    .header {
+      background-color: #f3f3f3;
+      text-align: center;
+
+    }
+
+    .days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      text-align: center;
+    }
+
+    .day {
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+      border-right: 1px solid #eee;
+    }
+
+    .day:last-child {
+      border-right: none;
+    }
+
+    .today {
+      background-color: #007bff;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="calendar">
+    <div class="header" id="monthYear"></div>
+    <div class="days" id="days">
+    </div>
+  </div>
+
+  <script>
+    function createCalendar() {
+      const monthNames = ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"];
+      const today = new Date();
+      const currentMonth = today.getMonth();
+      const currentYear = today.getFullYear();
+      const firstDay = new Date(currentYear, currentMonth, 1);
+      const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+      document.querySelector("#monthYear").innerHTML = `${currentYear}年 ${monthNames[currentMonth]}`;
+
+      let daysHtml = "";
+      for (let i = 1; i <= daysInMonth; i++) {
+        if (i === today.getDate()) {
+          daysHtml += `<div class="day today">${i}</div>`;
+        } else {
+          daysHtml += `<div class="day">${i}</div>`;
+        }
+      }
+      document.querySelector("#days").innerHTML = daysHtml;
+    }
+
+    createCalendar();
+  </script>
+
+</body>
+
+</html>

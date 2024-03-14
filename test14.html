@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>FAQセクション</title>
+  <style>
+    .faq-container {
+      max-width: 800px;
+      margin: 40px auto;
+    }
+
+    .faq-question {
+      border: none;
+      text-align: left;
+      padding: 15px;
+      width: 100%;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: background-color 0.4s ease;
+    }
+
+    .faq-question:hover {
+      background-color: #ddd;
+    }
+
+    .faq-answer {
+      background-color: white;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="faq-container">
+    <button class="faq-question">明日の天気は？</button>
+    <div class="faq-answer">
+      <p>晴れ</p>
+    </div>
+
+    <button class="faq-question">バスケットボールのプレイヤーの人数は？</button>
+    <div class="faq-answer">
+      <p>5人</p>
+    </div>
+
+    <button class="faq-question">橋本の好きな食べ物は？</button>
+    <div class="faq-answer">
+      <p>カレーライス</p>
+    </div>
+
+    <button class="faq-question">ボクシング漫画といえば？</button>
+    <div class="faq-answer">
+      <p>はじめの一歩</p>
+    </div>
+
+    <button class="faq-question">バスケ漫画といえば？</button>
+    <div class="faq-answer">
+      <p>すらむだんく</p>
+    </div>
+  </div>
+
+  <script>
+    var faqs = document.querySelectorAll(".faq-question");
+
+    faqs.forEach(faq => {
+      faq.addEventListener("click", function () {
+        var answer = this.nextElementSibling;
+        if (answer.style.maxHeight) {
+          answer.style.maxHeight = null;
+        } else {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>

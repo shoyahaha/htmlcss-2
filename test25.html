@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ニュースレターサインアップフォーム</title>
+  <style>
+    .signup-form {
+      text-align: center;
+      margin: 50px;
+    }
+
+    .signup-form #email {
+      padding: 10px 20px;
+    }
+
+    .signup-form #submit {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .signup-form #submit:hover {
+      background-color: #0056b3;
+    }
+
+    .thank-you-message {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="signup-form">
+    <input type="email" id="email" placeholder="メールアドレスを入力">
+    <input type="submit" id="submit" value="サインアップ">
+    <p class="thank-you-message" id="thankYouMessage">ありがとうございます！</p>
+  </div>
+
+  <script>
+    const submitButton = document.querySelector('#submit');
+    submitButton.addEventListener('click', function (event) {
+      submitForm();
+    });
+
+    function submitForm() {
+      const email = document.getElementById("email").value;
+      if (email) {
+        document.getElementById("thankYouMessage").style.display = "block";
+        document.getElementById("email").value = "";
+      } else {
+        alert("メールアドレスを入力してください。");
+        document.getElementById("thankYouMessage").style.display = "none";
+      }
+    };
+  </script>
+
+</body>
+
+</html>

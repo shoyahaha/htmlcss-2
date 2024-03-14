@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>モーダルウィンドウ</title>
+  <style>
+    #myModal {
+      display: none;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    #modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      width: 80%;
+    }
+
+    #close:hover {
+      color: black;
+      cursor: pointer;
+    }
+
+    #modal-image {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="myBtn">モーダルを開く</button>
+  <div id="myModal">
+    <div id="modal-content">
+      <button id="close">閉じる</button>
+      <p>私はゴリラです</p>
+      <img src="ゴリラ.jpg" alt="画像の説明" id="modal-image">
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById("myModal");
+    const btn = document.getElementById("myBtn");
+    const close = document.getElementById("close");
+    btn.onclick = function () {
+      modal.style.display = "block";
+    }
+    close.onclick = function () {
+      modal.style.display = "none";
+    }
+    // window.onclick = function(event) {
+    //     if (event.target == modal) {
+    //         modal.style.display = "none";
+    //     }
+    // }
+  </script>
+
+</body>
+
+</html>

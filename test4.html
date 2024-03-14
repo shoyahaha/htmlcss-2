@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>お問い合わせフォーム</title>
+  <style>
+    .form-group label {
+      display: block;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>お問い合わせ</h2>
+
+  <form>
+    <div class="form-group">
+      <label for="name">名前：</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">メールアドレス：</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="message">問い合わせ内容：</label>
+      <textarea id="message" name="message" required></textarea>
+    </div>
+    <button type="submit">送信</button>
+  </form>
+
+</body>
+
+</html>
